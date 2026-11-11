@@ -8,7 +8,7 @@ export async function POST(req) {
       return Response.json({
         success: true,
         message: 'Login berhasil!',
-        user: { username: 'admin', role: 'admin' }
+        user: { username: 'admin', role: 'Zaky Nurmuhadi NIM 3420230010' }
       });
     }
 
