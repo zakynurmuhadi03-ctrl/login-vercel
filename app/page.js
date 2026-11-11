@@ -42,7 +42,7 @@ export default function Home(){
       <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="admin123" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
       <button style={{width:'100%', padding:11, background:'#1e40af', color:'white', border:0, borderRadius:8, cursor:'pointer'}}>Login</button>
       <p style={{textAlign:'center', color:'red'}}>{msg}</p>
-      <p style={{textAlign:'center', fontSize:13}}>Demo: admin / admin123</p>
+     
     </form>
   )
 }
