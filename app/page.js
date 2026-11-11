@@ -26,7 +26,7 @@ export default function Home(){
 
   if(user) return (
     <div style={{maxWidth:400, margin:'80px auto', textAlign:'center', fontFamily:'sans-serif'}}>
-      <h2>Selamat Datang, {user.username} 👋</h2>
+      <h2>Selamat Datang, Sobat 👋</h2>
       <p>Role: {user.role}</p>
       <p>Kamu sudah login & terhubung ke Database Vercel</p>
       <button onClick={logout} style={{padding:'10px 20px', background:'red', color:'white', border:0, borderRadius:8, cursor:'pointer'}}>Logout</button>
