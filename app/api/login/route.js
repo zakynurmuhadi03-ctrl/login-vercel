@@ -1,31 +1,26 @@
-import { sql } from '@vercel/postgres'
-import bcrypt from 'bcryptjs'
-import { SignJWT } from 'jose'
-import { cookies } from 'next/headers'
+import { SignJWT } from 'jose';
 
-export async function POST(req){
-  const { username, password } = await req.json()
+export async function POST(req) {
+  try {
+    const { username, password } = await req.json();
 
-  // Buat tabel + user admin otomatis kalau belum ada
-  await sql`CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(255) NOT NULL, role VARCHAR(20) DEFAULT 'user')`
-  const cek = await sql`SELECT * FROM users WHERE username = ${username}`
-  if(cek.rows.length === 0 && username === 'admin'){
-    const hash = await bcrypt.hash('admin123', 10)
-    await sql`INSERT INTO users (username, password, role) VALUES ('admin', ${hash}, 'admin')`
+    // LOGIN DEMO - tanpa database, biar langsung bisa masuk di Vercel
+    if (username === 'admin' && password === 'admin123') {
+      const secret = new TextEncoder().encode(
+        process.env.JWT_SECRET || 'rahasia-demo-perpustakaan-123'
+      );
+      const token = await new SignJWT({ username: 'admin', role: 'admin' })
+        .setProtectedHeader({ alg: 'HS256' })
+        .setExpirationTime('24h')
+        .sign(secret);
+
+      const res = Response.json({ success: true, message: 'Login berhasil' });
+      res.cookies.set('token', token, { httpOnly: true, path: '/', maxAge: 60 * 60 * 24 });
+      return res;
+    }
+
+    return Response.json({ success: false, message: 'Username atau password salah' }, { status: 401 });
+  } catch (e) {
+    return Response.json({ success: false, message: 'Gagal login' }, { status: 500 });
   }
-
-  const result = await sql`SELECT * FROM users WHERE username = ${username}`
-  const user = result.rows[0]
-  if(!user) return Response.json({message:'Username tidak ditemukan'}, {status:401})
-
-  const cocok = await bcrypt.compare(password, user.password)
-  if(!cocok) return Response.json({message:'Password salah'}, {status:401})
-
-  const token = await new SignJWT({ id: user.id, username: user.username, role: user.role })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setExpirationTime('1d')
-    .sign(new TextEncoder().encode(process.env.JWT_SECRET || 'rahasia-zaky'))
-
-  cookies().set('token', token, { httpOnly: true, path: '/', maxAge: 86400 })
-  return Response.json({ user: { username: user.username, role: user.role } })
 }
