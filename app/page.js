@@ -38,9 +38,9 @@ export default function Home(){
    <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
       <h2 style={{textAlign:'center'}}>Login - Perpustakaan Digital</h2>
       <label>Username</label><br/>
-      <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="admin" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
+      <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
       <label>Password</label><br/>
-      <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="admin123" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
+      <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
       <button style={{width:'100%', padding:11, background:'#1e40af', color:'white', border:0, borderRadius:8, cursor:'pointer'}}>Login</button>
       <p style={{textAlign:'center', color:'red'}}>{msg}</p>
      
