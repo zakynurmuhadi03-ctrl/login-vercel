@@ -35,7 +35,7 @@ export default function Home(){
 
   return (
     <form onSubmit={login} style={{maxWidth:380, margin:'80px auto', padding:24, border:'1px solid #ddd', borderRadius:12, fontFamily:'sans-serif'}}>
-    <img src="https://raw.githubusercontent.com/zakynurmuhadi03-crl/login-vercel/main/app/logo.png" alt="Logo UIA" style={{width:90, height:90, display:'block', margin:'0 auto 10px'}} />
+    <img src="https://rekreartive.com/wp-content/uploads/2018/11/Logo-UIA-Universitas-Islam-As-Syafiiyah-Original-Lengkap.jpg.webp" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
       <h2 style={{textAlign:'center'}}>Login - Perpustakaan Digital</h2>
       <label>Username</label><br/>
       <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="admin" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
