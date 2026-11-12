@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 export default function Home(){
   const [user, setUser] = useState(null)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState('nul')
+  const [password, setPassword] = useState('nul')
   const [msg, setMsg] = useState('')
 
   async function login(e){
