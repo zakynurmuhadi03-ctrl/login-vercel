@@ -25,7 +25,8 @@ export default function Home(){
   }
 
   if(user) return (
-    <div style={{maxWidth:400, margin:'80px auto', textAlign:'center', fontFamily:'sans-serif'}}>
+      <div style={{maxWidth:400, margin:'80px auto', textAlign:'center', fontFamily:'sans-serif'}}>
+  <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
       <h2>Selamat Datang, Sobat 👋</h2>
       <p>Role: {user.role}</p>
       <p>Kamu sudah login & terhubung ke Database Vercel</p>
