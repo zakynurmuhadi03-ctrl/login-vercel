@@ -35,8 +35,10 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* BIRU GEDE - 200px, TULISAN TETEP FULL GAK KEPOTONG */}
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100px", objectFit: "fill", display: "block", borderRadius: "20px" }} />
+          {/* BIRU GEDE + LOGO GEDE - 165% */}
+          <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
+            <img src="/header-uia.png" alt="UIA" style={{ width: "165%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
+          </div>
 
           <div className="menu-row">
             {menus.map((m) => (
