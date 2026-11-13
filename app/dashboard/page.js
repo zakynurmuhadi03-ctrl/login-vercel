@@ -21,6 +21,8 @@ export default function DashboardPage() {
       .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 14px; border-radius: 14px; border: none; cursor: pointer; font-size: 16px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
       .menu-btn.active { background: #dbeafe; color: #1d4ed8; }
       .spacer { flex: 1; }
+
+      /* === DI HP: JADI KESAMPING === */
       @media (max-width: 768px) {
         .layout { flex-direction: column; }
         .sidebar { width: 100% !important; height: auto !important; position: static !important; flex-direction: row !important; align-items: center !important; padding: 12px !important; gap: 8px !important; }
@@ -38,6 +40,7 @@ export default function DashboardPage() {
         <div className="sidebar-header" style={{ width: "100%", height: "110px", borderRadius: "16px", overflow: "hidden", flexShrink: 0 }}>
           <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
         </div>
+
         <div className="menu-list">
           {menus.map((m) => (
             <button key={m.id} onClick={() => setActive(m.id)} className={active === m.id ? "menu-btn active" : "menu-btn"}>
@@ -45,13 +48,16 @@ export default function DashboardPage() {
             </button>
           ))}
         </div>
+
         <div className="spacer"></div>
+
         <div className="logout-wrap">
           <button onClick={() => router.push("/login")} className="menu-btn">
             <span style={{ fontSize: "18px" }}>⏻</span> <span className="menu-label">Keluar</span>
           </button>
         </div>
       </div>
+
       <div style={{ flex: 1, padding: "24px", display: "flex", flexDirection: "column", minWidth: 0 }}>
         <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
           {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
