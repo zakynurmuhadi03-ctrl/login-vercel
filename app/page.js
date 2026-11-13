@@ -26,10 +26,10 @@ export default function Home() {
       </div>
 
       {/* FOOTER - KECIL DI BAWAH TENGAH */}
-      <div style={{ marginTop: "auto", textAlign: "center", padding: "30px 20px 18px", color: "#6b7280", fontSize: "12.5px", fontFamily: "Arial, sans-serif" }}>
-        Web ini dikerjakan oleh <b style={{ color: "#374151" }}>Zaky Nurmuhadi</b> | 3420230010 | Teknik Informatika - TFUIA
-           <span style={{ fontSize: "12px", color: "#6b7280" }}>© 2026 All Rights Reserved.</span>
-      </div>
+    <div style={{ marginTop: "auto", textAlign: "center", padding: "40px 20px 18px", color: "#374151", fontSize: "13px", fontFamily: "Arial, sans-serif", lineHeight: "1.6" }}>
+        Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b> | 3420230010 | Teknik Informatika - TFUIA<br />
+        <span style={{ fontSize: "12px", color: "#6b7280" }}>© 2026 All Rights Reserved.</span>
+      </div> 
     </div>
   );
 }
