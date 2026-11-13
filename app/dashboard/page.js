@@ -12,6 +12,7 @@ export default function DashboardPage() {
     { id: "customers", label: "Customers", icon: "👥" },
   ];
 
+  
   return (
     <>
     <style>{`
