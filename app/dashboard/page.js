@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 export default function DashboardPage() {
   const [active, setActive] = useState("home");
   const router = useRouter();
@@ -17,29 +18,32 @@ export default function DashboardPage() {
     <style>{`
       .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
       .sidebar { width: 280px; background: #fff; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; flex-shrink: 0; }
-      .menu-list { display: flex; flex-direction: column; gap: 12px; }
+      .logo-box { width: 100%; border-radius: 16px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+      .logo-box img { width: 100%; height: auto; max-height: 110px; object-fit: contain; display: block; }
+      .menu-list { display: flex; flex-direction: column; gap: 12px; flex: 1; }
       .menu-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 14px; border: none; cursor: pointer; font-size: 16px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
       .menu-btn.active { background: #dbeafe; color: #1d4ed8; }
+      .logout-btn { margin-top: auto; }
       @media (max-width: 768px) {
         .layout { flex-direction: column; }
         .sidebar { width: 100% !important; padding: 12px !important; }
-        .logo-box { height: 90px !important; }
-        .menu-list { flex-direction: row !important; }
-        .menu-btn { padding: 10px 0 !important; font-size: 14px !important; }
+        .logo-box img { max-height: 80px !important; }
+        .menu-list { flex-direction: row !important; flex: none !important; }
+        .menu-btn { padding: 10px 0 !important; font-size: 13px !important; flex: 1 !important; }
+        .logout-btn { margin-top: 0 !important; }
       }
     `}</style>
     <div className="layout">
       <div className="sidebar">
-        <div className="logo-box" style={{ width: "100%", height: "110px", borderRadius: "16px", overflow: "hidden" }}>
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        <div className="logo-box">
+          <img src="/header-uia.png" alt="UIA" />
         </div>
         <div className="menu-list">
           {menus.map((m) => (
             <button key={m.id} onClick={() => setActive(m.id)} className={active === m.id ? "menu-btn active" : "menu-btn"}>{m.label}</button>
           ))}
+          <button onClick={() => router.push("/login")} className="menu-btn logout-btn">Keluar</button>
         </div>
-        <div style={{ flex: 1 }}></div>
-        <button onClick={() => router.push("/login")} className="menu-btn">Keluar</button>
       </div>
       <div style={{ flex: 1, padding: "24px", display: "flex", flexDirection: "column" }}>
         <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
