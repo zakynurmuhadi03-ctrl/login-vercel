@@ -35,8 +35,8 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* LOGO AGAK BESAR KE BAWAH */}
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "75px", objectFit: "cover", objectPosition: "center", display: "block", borderRadius: "14px", marginBottom: "12px" }} />
+          {/* LOGO GESER KE KANAN + GAK KEPOTONG LAGI */}
+          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "75px", objectFit: "contain", objectPosition: "left center", background: "#2f6bff", display: "block", borderRadius: "14px", marginBottom: "12px", paddingLeft: "12px", boxSizing: "border-box" }} />
 
           <div className="menu-row">
             {menus.map((m) => (
