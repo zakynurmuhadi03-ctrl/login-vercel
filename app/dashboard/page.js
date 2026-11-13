@@ -22,9 +22,8 @@ export default function DashboardPage() {
     <style>{`
       .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
       .sidebar { width: 280px; background: #fff; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; flex-shrink: 0; }
-      .logo-box { width: 100%; border-radius: 16px; background: linear-gradient(90deg, #1e40af, #3b82f6); display: flex; align-items: center; gap: 12px; padding: 14px 12px; box-sizing: border-box; }
-      .icon-box { width: 78px; height: 78px; overflow: hidden; flex-shrink: 0; border-radius: 10px; background: #fff; display: flex; align-items: center; justify-content: center; }
-      .icon-box img { width: 380%; height: 100%; object-fit: cover; object-position: left center; display: block; }
+      .logo-box { width: 100%; border-radius: 16px; background: linear-gradient(90deg, #1e40af, #3b82f6); display: flex; align-items: center; gap: 12px; padding: 14px 14px; box-sizing: border-box; }
+      .uia { font-size: 46px; font-weight: 900; letter-spacing: -1px; color: #22c55e; line-height: 1; text-shadow: 2px 2px 0 #fff; flex-shrink: 0; }
       .logo-text { color: #fff; line-height: 1.15; }
       .logo-text b { font-size: 19px; letter-spacing: 0.5px; }
       .logo-text span { font-size: 10.5px; opacity: 0.9; }
@@ -35,7 +34,7 @@ export default function DashboardPage() {
       @media (max-width: 768px) {
         .layout { flex-direction: column; }
         .sidebar { width: 100% !important; padding: 12px !important; }
-        .icon-box { width: 62px !important; height: 62px !important; }
+        .uia { font-size: 38px !important; }
         .menu-list { flex-direction: row !important; flex: none !important; }
         .menu-btn { padding: 12px 0 !important; justify-content: center !important; flex: 1 !important; }
         .menu-label { display: none !important; }
@@ -45,7 +44,7 @@ export default function DashboardPage() {
     <div className="layout">
       <div className="sidebar">
         <div className="logo-box">
-          <div className="icon-box"><img src="/header-uia.png" alt="UIA" /></div>
+          <div className="uia">UIA</div>
           <div className="logo-text"><b>UNIVERSITAS</b><br /><span>ISLAM AS-SYAFI'IYAH</span></div>
         </div>
         <div className="menu-list">
