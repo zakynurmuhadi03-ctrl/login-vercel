@@ -28,7 +28,7 @@ export default function LoginPage() {
       <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center", padding: "18px 12px" }}>
         {/* FORM LOGIN - UDAH DI TENGAH */}
         <div style={{ background: "white", padding: "28px", maxWidth: "620px", width: "100%", boxSizing: "border-box", borderRadius: "10px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
-          <h1 style={{ fontSize: "20px", fontWeight: "800", color: "#111827", lineHeight: "1.4", margin: 0 }}>
+          <h1 style={{ fontSize: "26px", fontWeight: "800", color: "#111827", lineHeight: "1.4", margin: 0 }}>
             Silakan Masuk dengan akun Anda.
           </h1>
 
