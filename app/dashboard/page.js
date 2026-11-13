@@ -37,7 +37,7 @@ export default function DashboardPage() {
           </button>
         ))}
         <button
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/login")}
           style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "3px", padding: "12px 0", borderRadius: "14px", border: "none", cursor: "pointer", background: "#fff", color: "#333", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
         >
           <span style={{ fontSize: "20px" }}>⏻</span>
