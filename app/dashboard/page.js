@@ -35,10 +35,8 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* 125% - UDAH PAS, JANGAN DIGEDEIN LAGI */}
-          <div style={{ width: "100%", height: "140px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "150%", height: "75px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
-          </div>
+          {/* BIRU GEDE - 200px, TULISAN TETEP FULL GAK KEPOTONG */}
+          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "200px", objectFit: "fill", display: "block", borderRadius: "20px" }} />
 
           <div className="menu-row">
             {menus.map((m) => (
