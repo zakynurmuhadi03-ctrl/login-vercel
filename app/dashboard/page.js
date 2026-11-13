@@ -1,11 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 export default function DashboardPage() {
   const [active, setActive] = useState("home");
   const router = useRouter();
-
   const menus = [
     { id: "home", label: "Home", icon: "🏠" },
     { id: "invoices", label: "Invoices", icon: "🧾" },
