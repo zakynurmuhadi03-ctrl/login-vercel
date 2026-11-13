@@ -10,10 +10,10 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Login sementara, nanti nyambung ke database
-    if (email === "admin@iconplus.id" && password === "admin123") {
+    if (email === "zakynurmuhadi03@gmail.com" && password === "admin123") {
       router.push("/dashboard");
     } else {
-      alert("Email atau kata sandi salah! Coba admin@iconplus.id / admin123");
+      alert("Email atau kata sandi salah! Coba zakynurmuhadi03@gmail.com / admin123");
     }
   };
 
