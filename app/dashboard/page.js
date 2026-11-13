@@ -28,8 +28,8 @@ export default function DashboardPage() {
 
     <div style={{ display: "flex", minHeight: "100vh", background: "#eaf2ff", fontFamily: "sans-serif" }}>
       <div className="sidebar">
-        <div style={{ width: "100%", height: "110px", borderRadius: "16px", overflow: "hidden", flexShrink: 0 }}>
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+  <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
+            <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
         </div>
 
         {menus.map((m) => (
