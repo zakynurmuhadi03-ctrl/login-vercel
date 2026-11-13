@@ -18,20 +18,27 @@ export default function Login() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
-      {/* HEADER - LOGO UIA */}
+      {/* HEADER PERSIS KAYAK FOTO UIA */}
       <div style={{
         background: "linear-gradient(90deg, #1d4ed8, #2563eb)",
-        margin: "15px", borderRadius: "18px", padding: "15px 30px",
-        display: "flex", alignItems: "center", gap: "15px", color: "white"
+        margin: "15px", borderRadius: "18px", padding: "18px 30px",
+        display: "flex", alignItems: "center", gap: "0px", color: "white"
       }}>
-        <img 
-          src="https://researchdunia.s3.amazonaws.com/uploads/university/a7a8660487fd1bfb33254badf88ceb2e.png"
-          alt="Logo UIA"
-          style={{ height: "60px", width: "auto", background: "white", borderRadius: "10px", padding: "4px" }}
-        />
-        <div style={{ borderLeft: "2px solid rgba(255,255,255,0.5)", paddingLeft: "15px" }}>
-          <div style={{ fontWeight: "800", fontSize: "22px", lineHeight: "1", letterSpacing: "1px" }}>UNIVERSITAS</div>
-          <div style={{ fontSize: "13px", letterSpacing: "1px", fontWeight: "600" }}>ISLAM AS-SYAFI'IYAH</div>
+        {/* LOGO UIA - TANPA KOTAK PUTIH */}
+        <div style={{ display: "flex", alignItems: "center", gap: "15px", paddingRight: "20px", borderRight: "2px solid rgba(255,255,255,0.6)" }}>
+          <div style={{ position: "relative", lineHeight: "1", textAlign: "center" }}>
+            <div style={{ fontSize: "10px", color: "#fff", marginBottom: "2px" }}>ﷺ</div>
+            <div style={{ fontSize: "52px", fontWeight: "900", letterSpacing: "-3px", color: "#0a3d2c", textShadow: "1px 1px 0 rgba(0,0,0,0.2)" }}>
+              UI<span style={{ color: "#16a34a" }}>▲</span>
+            </div>
+            <div style={{ fontSize: "9px", letterSpacing: "1px", color: "#0a3d2c", fontWeight: "700" }}>AS-SYAFI'IYAH</div>
+          </div>
+        </div>
+
+        {/* TEKS KANAN */}
+        <div style={{ paddingLeft: "20px" }}>
+          <div style={{ fontWeight: "900", fontSize: "32px", lineHeight: "1", letterSpacing: "1px", color: "#0f172a" }}>UNIVERSITAS</div>
+          <div style={{ fontSize: "16px", letterSpacing: "0.5px", fontWeight: "700", color: "#15803d", marginTop: "4px" }}>ISLAM AS-SYAFI'IYAH</div>
         </div>
       </div>
 
