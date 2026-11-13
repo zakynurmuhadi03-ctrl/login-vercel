@@ -2,13 +2,26 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+function IconHome() {
+  return (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10.5L12 3l9 7.5" /><path d="M5 9.5V21h14V9.5" /><path d="M9.5 21v-6h5v6" /></svg>);
+}
+function IconInvoice() {
+  return (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 13h6" /><path d="M9 17h6" /></svg>);
+}
+function IconCustomers() {
+  return (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2" /><path d="M2.5 20c0-3.3 2.9-5 6.5-5s6.5 1.7 6.5 5" /><circle cx="17" cy="9" r="2.5" /><path d="M16 14.6c2.8 0.4 5.5 2 5.5 5.4" /></svg>);
+}
+function IconPower() {
+  return (<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v10" /><path d="M18.3 6.3a9 9 0 1 1-12.6 0" /></svg>);
+}
+
 export default function DashboardPage() {
   const [active, setActive] = useState("home");
   const router = useRouter();
   const menus = [
-    { id: "home", label: "Home", icon: "🏠" },
-    { id: "invoices", label: "Invoices", icon: "🧾" },
-    { id: "customers", label: "Customers", icon: "👥" },
+    { id: "home", label: "Home", Icon: IconHome },
+    { id: "invoices", label: "Invoices", Icon: IconInvoice },
+    { id: "customers", label: "Customers", Icon: IconCustomers },
   ];
   let title = "Dashboard Page";
   if (active === "invoices") title = "Invoices Page";
@@ -18,46 +31,34 @@ export default function DashboardPage() {
     <style>{`
       .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
       .sidebar { width: 280px; background: #fff; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; flex-shrink: 0; }
-      .logo-box { width: 100%; border-radius: 16px; overflow: hidden; background: linear-gradient(90deg, #1e40af, #3b82f6); display: flex; align-items: center; gap: 10px; padding: 12px; box-sizing: border-box; }
-      .icon-box { width: 68px; height: 68px; overflow: hidden; flex-shrink: 0; border-radius: 10px; background: #fff; display: flex; align-items: center; justify-content: center; }
-      .icon-box img { width: 340%; height: 100%; object-fit: cover; object-position: left center; display: block; }
-      .logo-text { color: #fff; line-height: 1.2; }
-      .logo-text b { font-size: 17px; letter-spacing: 0.5px; }
-      .logo-text span { font-size: 10px; opacity: 0.9; }
+      .logo-box { width: 100%; border-radius: 16px; overflow: hidden; background: #2563eb; display: block; }
+      .logo-box img { width: 100%; height: auto; display: block; }
       .menu-list { display: flex; flex-direction: column; gap: 12px; flex: 1; }
       .menu-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 14px; border: none; cursor: pointer; font-size: 16px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
       .menu-btn.active { background: #dbeafe; color: #1d4ed8; }
-      .menu-icon { font-size: 22px; line-height: 1; }
       .logout-btn { margin-top: auto; }
       @media (max-width: 768px) {
         .layout { flex-direction: column; }
         .sidebar { width: 100% !important; padding: 12px !important; }
-        .icon-box { width: 58px !important; height: 58px !important; }
         .menu-list { flex-direction: row !important; flex: none !important; }
-        .menu-btn { padding: 12px 0 !important; flex: 1 !important; }
+        .menu-btn { padding: 14px 0 !important; flex: 1 !important; }
         .menu-label { display: none !important; }
-        .menu-icon { font-size: 26px !important; }
         .logout-btn { margin-top: 0 !important; }
       }
     `}</style>
     <div className="layout">
       <div className="sidebar">
         <div className="logo-box">
-          <div className="icon-box">
-            <img src="/header-uia.png" alt="UIA" />
-          </div>
-          <div className="logo-text">
-            <b>UNIVERSITAS</b><br /><span>ISLAM AS-SYAFI'IYAH</span>
-          </div>
+          <img src="/header-uia.png" alt="UIA" />
         </div>
         <div className="menu-list">
           {menus.map((m) => (
             <button key={m.id} onClick={() => setActive(m.id)} className={active === m.id ? "menu-btn active" : "menu-btn"}>
-              <span className="menu-icon">{m.icon}</span><span className="menu-label">{m.label}</span>
+              <m.Icon /><span className="menu-label">{m.label}</span>
             </button>
           ))}
           <button onClick={() => router.push("/login")} className="menu-btn logout-btn">
-            <span className="menu-icon">🚪</span><span className="menu-label">Keluar</span>
+            <IconPower /><span className="menu-label">Keluar</span>
           </button>
         </div>
       </div>
