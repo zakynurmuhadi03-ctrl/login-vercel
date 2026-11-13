@@ -18,7 +18,7 @@ export default function DashboardPage() {
         .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
         .sidebar { width: 280px; flex-shrink: 0; background: #fff; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
         .menu-row { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-        .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 14px; border-radius: 14px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px; border-radius: 14px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
         .menu-btn.active { background: #dbeafe; color: #1d4ed8; font-weight: 700; }
         .content { flex: 1; padding: 24px; display: flex; flex-direction: column; min-width: 0; }
         @media (max-width: 768px) {
@@ -35,10 +35,8 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* LOGO KAYAK DI FOTO - GEDE KE BAWAH, LOGO DI BAWAH KIRI */}
-          <div style={{ width: "100%", height: "145px", background: "#1d4ed8", borderRadius: "20px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "0 0 22px 14px", boxSizing: "border-box" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "185px", height: "auto", display: "block" }} />
-          </div>
+          {/* FINAL - CUMA 1 GAMBAR, UDAH PAS KAYAK FOTO KAMU */}
+          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "150px", objectFit: "cover", objectPosition: "left center", display: "block", borderRadius: "20px" }} />
 
           <div className="menu-row">
             {menus.map((m) => (
