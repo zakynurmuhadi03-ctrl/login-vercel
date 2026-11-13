@@ -12,10 +12,19 @@ export default function Dashboard() {
         <div style={{ width: "280px", flexShrink: 0, padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
           
           {/* LOGO - GEDE, TINGGI 200px */}
-        
-<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
-  <img src="/header-uia.png" alt="UIA" style={{ width: "78", height: "auto", display: "block" }} />
-</div>
+<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", background: "#2563eb", display: "flex", alignItems: "flex-end", justifyContent: "flex-start", padding: "0 15px 18px 15px" }}>
+  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    <div style={{ fontSize: "52px", fontWeight: "900", lineHeight: 1, letterSpacing: "-2px" }}>
+      <span style={{ color: "#22c55e" }}>U</span><span style={{ color: "white" }}>I</span><span style={{ color: "#22c55e" }}>A</span>
+    </div>
+    <div style={{ borderLeft: "3px solid white", paddingLeft: "10px", lineHeight: 1.1 }}>
+      <div style={{ color: "#0f172a", fontWeight: "800", fontSize: "16px" }}>UNIVERSITAS</div>
+      <div style={{ color: "#0f172a", fontWeight: "800", fontSize: "16px" }}>ISLAM</div>
+      <div style={{ color: "#0f172a", fontWeight: "800", fontSize: "11px" }}>AS-SYAFI'IYAH</div>
+    </div>
+  </div>
+</div>        
+
           <button style={{ display: "flex", alignItems: "center", gap: "12px", background: "#dbeafe", color: "#2563eb", border: "none", padding: "14px 16px", borderRadius: "12px", textAlign: "left", cursor: "pointer", fontSize: "15px", fontWeight: "700" }}>
             ⌂ Home
           </button>
