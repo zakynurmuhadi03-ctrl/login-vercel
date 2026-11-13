@@ -50,7 +50,7 @@ export default function DashboardPage() {
         {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
         {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
         {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
-        <p style={{ color: "#666", fontSize: "14px" }}>Selamat datang, Zaky Nurmuhadi</p>
+        <p style={{ color: "#666", fontSize: "14px" }}></p>
       </div>
 
       {/* FOOTER - GAK KEPOTONG LAGI */}
