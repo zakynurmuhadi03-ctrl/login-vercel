@@ -1,62 +1,35 @@
 "use client";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Home() {
   const router = useRouter();
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email === "zakynurmuhadi@gmail.com" && password === "admin123") {
-      router.push("/dashboard");
-    } else {
-      alert("Email atau kata sandi salah!");
-    }
-  };
-
   return (
-    <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(to bottom, #dbeafe, #eff6ff)", fontFamily: "Georgia, serif", display: "flex", flexDirection: "column" }}>
+      
       {/* HEADER - GAMBAR PERSIS */}
-      <div style={{ margin: "15px", borderRadius: "18px", overflow: "hidden" }}>
-        <img
-          src="/header-uia.png"
-          alt="Universitas Islam As-Syafi'iyah"
-          style={{ width: "100%", display: "block" }}
-        />
+      <div style={{ margin: "15px", borderRadius: "18px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.1)" }}>
+        <img src="/header-uia.png" alt="Universitas Islam As-Syafi'iyah" style={{ width: "100%", display: "block" }} />
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "60px", padding: "0 20px" }}>
-        <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: "420px" }}>
-          <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#1f2937", marginBottom: "25px" }}>
-            Silakan Masuk dengan akun Anda.
-          </h2>
+      {/* KARTU SELAMAT DATANG */}
+      <div style={{ background: "white", margin: "10px 15px", borderRadius: "22px", padding: "30px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.05)" }}>
+        <h1 style={{ fontSize: "27px", fontWeight: "800", color: "#1f2937", lineHeight: "1.35", margin: 0 }}>
+          Selamat Datang!<br />
+          <span style={{ fontWeight: "400" }}>Ini adalah situs web pembelajaran</span><br />
+          <span style={{ fontWeight: "400", color: "#2563eb" }}>Mata Kuliah Web teknologi,</span>
+          <span style={{ fontWeight: "400" }}> Dosen Pengampu </span>
+          <span style={{ fontWeight: "700" }}>Adhitya Ahmad Pradypta, S.Kom., M.T.I.</span>
+        </h1>
 
-          <label style={{ fontSize: "12px", fontWeight: "700", color: "#374151", letterSpacing: "1px" }}>EMAIL</label>
-          <div style={{ display: "flex", alignItems: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: "10px", padding: "12px", margin: "8px 0 20px" }}>
-            <span style={{ marginRight: "10px" }}>📧</span>
-            <input type="email" required placeholder="Ketikkan alamat email"
-              value={email} onChange={(e) => setEmail(e.target.value)}
-              style={{ border: "none", outline: "none", width: "100%", fontSize: "14px" }} />
-          </div>
+        <button onClick={() => router.push("/login")} style={{ marginTop: "24px", background: "#2563eb", color: "white", border: "none", padding: "13px 26px", borderRadius: "999px", fontSize: "17px", display: "flex", alignItems: "center", gap: "14px", cursor: "pointer", fontFamily: "Arial, sans-serif" }}>
+          Log in <span style={{ fontSize: "20px" }}>→</span>
+        </button>
+      </div>
 
-          <label style={{ fontSize: "12px", fontWeight: "700", color: "#374151", letterSpacing: "1px" }}>KATA SANDI</label>
-          <div style={{ display: "flex", alignItems: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: "10px", padding: "12px", margin: "8px 0 20px" }}>
-            <span style={{ marginRight: "10px" }}>🔑</span>
-            <input type="password" required placeholder="Ketikkan Kata Sandi"
-              value={password} onChange={(e) => setPassword(e.target.value)}
-              style={{ border: "none", outline: "none", width: "100%", fontSize: "14px" }} />
-          </div>
-
-          <button type="submit" style={{
-            width: "100%", background: "#2563eb", color: "white", border: "none",
-            padding: "14px", borderRadius: "10px", fontWeight: "700", fontSize: "15px",
-            display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer"
-          }}>
-            <span>Masuk</span><span>→</span>
-          </button>
-        </form>
+      {/* FOOTER - NAMA UDAH ZAKY */}
+      <div style={{ marginTop: "auto", textAlign: "center", padding: "20px", color: "#475569", fontSize: "15px", fontFamily: "Arial, sans-serif", lineHeight: "1.5" }}>
+        Web ini dikerjakan oleh <b style={{ color: "#1f2937" }}>Zaky Nurmuhadi</b> |<br />
+        3420230004 | Teknik Informatika - TFUIA
       </div>
     </div>
   );
