@@ -30,6 +30,9 @@ export default function DashboardPage() {
           .content { padding: 12px; }
           .logout-wrap { margin-top: 0; flex: 1; display: flex; }
           .logout-wrap .menu-btn { flex: 1; }
+          @media (max-width: 768px) {
+  .menu-label { display: none !important; }
+}
         }
       `}</style>
 
@@ -43,12 +46,13 @@ export default function DashboardPage() {
           <div className="menu-row">
             {menus.map((m) => (
               <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
-                <span style={{ fontSize: "18px" }}>{m.icon}</span> {m.label}
+                <span style={{ frontSize: "18px"}}>{m.icon}</span> <span className="menu-label">{m.label}</span>
               </button>
             ))}
+              <div style={{ flex:1}}></div>
             <div className="logout-wrap">
               <button onClick={() => router.push("/login")} className="menu-btn">
-                <span style={{ fontSize: "18px" }}>⏻</span> Keluar
+                <span style={{ fontSize: "18px" }}>⏻ <span className="menu-label">keluar</span>
               </button>
             </div>
           </div>
