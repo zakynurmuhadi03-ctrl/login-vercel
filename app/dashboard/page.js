@@ -11,9 +11,7 @@ export default function DashboardPage() {
     { id: "invoices", label: "Invoices", icon: "🧾" },
     { id: "customers", label: "Customers", icon: "👥" },
   ];
-
- 
-  return (
+   return (
     <>
     <style>{`
       .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
