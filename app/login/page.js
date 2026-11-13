@@ -38,4 +38,61 @@ export default function LoginPage() {
               <div style={{ display: "flex", alignItems: "center", gap: "8px", background: "#f8f7ee", borderRadius: "10px", padding: "14px", marginTop: "8px" }}>
                 <span>📧</span>
                 <input
-                  type="email
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Ketikkan alamat email"
+                  style={{ border: "none", outline: "none", background: "transparent", width: "100%", fontSize: "15px", fontFamily: "inherit" }}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label style={{ fontSize: "13px", fontWeight: "700", letterSpacing: "1px" }}>KATA SANDI</label>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", background: "#f8f7ee", borderRadius: "10px", padding: "14px", marginTop: "8px" }}>
+                <span>🔑</span>
+                <input
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Ketikkan Kata Sandi"
+                  style={{ border: "none", outline: "none", background: "transparent", width: "100%", fontSize: "15px", fontFamily: "inherit" }}
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              style={{
+                width: "100%",
+                background: loading ? "#93b4ff" : "#2f6bff",
+                color: "#fff",
+                border: "none",
+                borderRadius: "12px",
+                padding: "14px 20px",
+                fontSize: "15px",
+                fontWeight: "700",
+                cursor: loading ? "not-allowed" : "pointer",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <span>{loading ? "Memproses..." : "Masuk"}</span>
+              <span>{loading ? "⏳" : "→"}</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* FOOTER DIBAWAH */}
+      <div style={{ textAlign: "center", padding: "20px 10px", fontSize: "12px", color: "#555", lineHeight: "1.6" }}>
+        Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b> | 3420230010 | Teknik Informatika - TFI UIA<br />
+        © 2026 All Rights Reserved.
+      </div>
+    </div>
+  );
+}
