@@ -17,40 +17,41 @@ export default function DashboardPage() {
       <style>{`
         .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
         .sidebar { width: 250px; flex-shrink: 0; background: #fff; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+        .menu-row { display: flex; flex-direction: column; gap: 8px; width: 100%; }
         .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; border-radius: 12px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: transparent; color: #333; }
         .menu-btn.active { background: #dbeafe; color: #1d4ed8; font-weight: 700; }
         .content { flex: 1; padding: 24px; display: flex; flex-direction: column; min-width: 0; }
         @media (max-width: 768px) {
           .layout { flex-direction: column; }
           .sidebar { width: 100%; box-sizing: border-box; padding: 12px; }
-          .menu-row { display: flex; gap: 8px; }
-          .menu-btn { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 10px 0; font-size: 12px; text-align: center; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+          .menu-row { flex-direction: row; gap: 8px; }
+          .menu-btn { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 10px 0; font-size: 11px; text-align: center; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
           .menu-btn.active { background: #2f6bff; color: #fff; }
           .content { padding: 12px; }
-          .logout-wrap { margin-top: 8px; }
-          .logout-wrap .menu-btn { flex-direction: row; }
+          .logout-wrap { margin-top: 0; flex: 1; display: flex; }
+          .logout-wrap .menu-btn { flex: 1; }
         }
       `}</style>
 
       <div className="layout">
-        {/* SIDEBAR / DI HP JADI MENU ATAS */}
         <div className="sidebar">
           <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "auto", borderRadius: "14px", marginBottom: "8px" }} />
-          <div className="menu-row" style={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
+          
+          {/* SEMUA 4 TOMBOL DALAM 1 BARIS DI HP */}
+          <div className="menu-row">
             {menus.map((m) => (
               <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
-                <span>{m.icon}</span> {m.label}
+                <span style={{ fontSize: "18px" }}>{m.icon}</span> {m.label}
               </button>
             ))}
-          </div>
-          <div className="logout-wrap" style={{ marginTop: "auto" }}>
-            <button onClick={() => { if (confirm("Yakin mau keluar?")) router.push("/login"); }} className="menu-btn">
-              <span>⏻</span> Keluar
-            </button>
+            <div className="logout-wrap">
+              <button onClick={() => { if (confirm("Yakin mau keluar?")) router.push("/login"); }} className="menu-btn">
+                <span style={{ fontSize: "18px" }}>⏻</span> Keluar
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* ISI */}
         <div className="content">
           <div style={{ background: "#fff", borderRadius: "18px", padding: "24px", flex: 1 }}>
             {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
