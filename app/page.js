@@ -9,7 +9,7 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === "admin@iconplus.id" && password === "admin123") {
+    if (email === "zakynurmuhadi@gmail.com" && password === "admin123") {
       router.push("/dashboard");
     } else {
       alert("Email atau kata sandi salah!");
