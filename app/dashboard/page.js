@@ -43,7 +43,7 @@ export default function DashboardPage() {
           <div className="menu-row">
             {menus.map((m) => (
               <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
-                <span style={{ fontSize: "18px" }}>{m.icon}</span> <span className="menu-label">{m.label} </span>
+                <span style={{ fontSize: "18px" }}>{m.icon}</span> {m.label}
               </button>
             ))}
             <div className="logout-wrap">
