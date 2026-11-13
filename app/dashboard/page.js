@@ -19,7 +19,7 @@ export default function DashboardPage() {
       .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
       .sidebar { width: 280px; background: #fff; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; flex-shrink: 0; }
       .logo-box { width: 100%; border-radius: 16px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
-      .logo-box img { width: 100%; height: auto; max-height: 110px; object-fit: contain; display: block; }
+      .logo-box img { width: 100%; height: auto; display: block; object-fit: contain; }
       .menu-list { display: flex; flex-direction: column; gap: 12px; flex: 1; }
       .menu-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 14px; border: none; cursor: pointer; font-size: 16px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
       .menu-btn.active { background: #dbeafe; color: #1d4ed8; }
@@ -27,7 +27,7 @@ export default function DashboardPage() {
       @media (max-width: 768px) {
         .layout { flex-direction: column; }
         .sidebar { width: 100% !important; padding: 12px !important; }
-        .logo-box img { max-height: 80px !important; }
+        .logo-box img { width: 100% !important; height: auto !important; }
         .menu-list { flex-direction: row !important; flex: none !important; }
         .menu-btn { padding: 10px 0 !important; font-size: 13px !important; flex: 1 !important; }
         .logout-btn { margin-top: 0 !important; }
