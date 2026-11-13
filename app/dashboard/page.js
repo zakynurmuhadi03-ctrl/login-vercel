@@ -55,11 +55,12 @@ export default function DashboardPage() {
         </div>
 
         <div className="content">
-          <div style={{ background: "#fff", borderRadius: "18px", padding: "24px", flex: 1 }}>
+          {/* KOTAK PUTIH CUKUP SAMPE ISI NYA AJA, GAK SAMPE BAWAH LAGI */}
+          <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
             {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
             {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
             {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
-            <p style={{ color: "#666", fontSize: "14px" }}>Selamat datang, Zaky Nurmuhadi</p>
+            <p style={{ color: "#666", fontSize: "14px", marginBottom: 0 }}>Selamat datang, Zaky Nurmuhadi</p>
           </div>
           <div style={{ textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
             Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
