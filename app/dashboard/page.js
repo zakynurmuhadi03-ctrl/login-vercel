@@ -50,13 +50,13 @@ export default function DashboardPage() {
         {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
         {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
         {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
-        <p style={{ color: "#666", fontSize: "14px" }}>Selamat datang, Dafa Ardianto</p>
+        <p style={{ color: "#666", fontSize: "14px" }}>Selamat datang, Zaky Nurmuhadi</p>
       </div>
 
       {/* FOOTER - GAK KEPOTONG LAGI */}
       <div style={{ textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
-        Web ini dikerjakan oleh <b>Dafa Ardianto</b><br />
-        3420230004 | Teknik Informatika - TFI UIA
+        Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
+        3420230010 | Teknik Informatika - TFI UIA
       </div>
 
     </div>
