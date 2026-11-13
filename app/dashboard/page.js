@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
 export default function DashboardPage() {
   const [active, setActive] = useState("home");
   const router = useRouter();
