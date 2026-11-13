@@ -15,49 +15,43 @@ export default function DashboardPage() {
   return (
     <>
     <style>{`
-      .sidebar { width: 280px; background: #fff; padding: 16px 12px; display: flex; flex-direction: column; gap: 12px; height: 100vh; box-sizing: border-box; position: sticky; top: 0; flex-shrink: 0; }
-      .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 14px; border-radius: 14px; border: none; cursor: pointer; font-size: 16px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-      .menu-btn.active { background: #dbeafe; color: #1d4ed8; }
-      .content { flex: 1; padding: 24px; display: flex; flex-direction: column; min-width: 0; }
+      .menu-label { display: block; font-size: 13px; }
       @media (max-width: 768px) {
-        .sidebar { width: 90px !important; }
-        .menu-btn { justify-content: center !important; padding: 14px 0 !important; }
         .menu-label { display: none !important; }
       }
     `}</style>
 
-    <div style={{ display: "flex", minHeight: "100vh", background: "#eaf2ff", fontFamily: "sans-serif" }}>
-      <div className="sidebar">
-  <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
-        </div>
-
-        {menus.map((m) => (
-          <button key={m.id} onClick={() => setActive(m.id)} className={active === m.id ? "menu-btn active" : "menu-btn"}>
-            <span style={{ fontSize: "18px" }}>{m.icon}</span> <span className="menu-label">{m.label}</span>
-          </button>
-        ))}
-
-        <div style={{ flex: 1 }}></div>
-
-        <div className="logout-wrap">
-          <button onClick={() => router.push("/login")} className="menu-btn">
-            <span style={{ fontSize: "18px" }}>⏻</span> <span className="menu-label">Keluar</span>
-          </button>
-        </div>
+    <div style={{ minHeight: "100vh", background: "#eaf2ff", fontFamily: "sans-serif", padding: "12px", boxSizing: "border-box" }}>
+      
+      {/* HEADER BIRU */}
+      <div style={{ width: "100%", borderRadius: "16px", overflow: "hidden" }}>
+        <img src="/header-uia.png" alt="UIA" style={{ width: "100%", display: "block", objectFit: "cover" }} />
       </div>
 
-      <div className="content">
-        <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
-          {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
-          {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
-          {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
-          <p style={{ color: "#666", fontSize: "14px", marginBottom: 0 }}></p>
-        </div>
-        <div style={{ marginTop: "auto", textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
-          Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
-          3420230010 | Teknik Informatika - TFI UIA
-        </div>
+      {/* MENU KESAMPING - HOME / INVOICES / CUSTOMERS / KELUAR */}
+      <div style={{ display: "flex", gap: "8px", marginTop: "12px" }}>
+        {menus.map((m) => (
+          <button key={m.id} onClick={() => setActive(m.id)} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "2px", padding: "10px 0", borderRadius: "14px", border: "none", cursor: "pointer", background: active === m.id ? "#2f6bff" : "#fff", color: active === m.id ? "#fff" : "#333", boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}>
+            <span style={{ fontSize: "20px" }}>{m.icon}</span>
+            <span className="menu-label">{m.label}</span>
+          </button>
+        ))}
+        <button onClick={() => router.push("/login")} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "2px", padding: "10px 0", borderRadius: "14px", border: "none", cursor: "pointer", background: "#fff", color: "#333", boxShadow: "0 2px 10px rgba(0,0,0,0.08)" }}>
+          <span style={{ fontSize: "20px" }}>⏻</span>
+          <span className="menu-label">Keluar</span>
+        </button>
+      </div>
+
+      {/* KONTEN */}
+      <div style={{ background: "#fff", borderRadius: "16px", padding: "24px", marginTop: "12px" }}>
+        {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
+        {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
+        {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
+      </div>
+
+      <div style={{ textAlign: "center", padding: "24px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
+        Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
+        3420230010 | Teknik Informatika - TFI UIA
       </div>
     </div>
     </>
