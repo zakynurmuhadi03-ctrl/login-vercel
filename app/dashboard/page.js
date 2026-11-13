@@ -12,7 +12,7 @@ export default function Dashboard() {
         <div style={{ width: "280px", flexShrink: 0, padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
           
           {/* LOGO - GEDE, TINGGI 200px */}
-<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", background: "#2f6bff", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
+<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", backgroundImage: "url(header-uia.png)", backgroundSize: "cover", backgroundPossition: "center", backgroundRepeat: "no-repeat"}}></div>
   <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100", objectFit: "cover", transform: "translate(200px, 25px) scale(2.9)", display: "block" }} />
 </div>
 
