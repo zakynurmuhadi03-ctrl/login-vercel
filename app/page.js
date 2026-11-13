@@ -11,7 +11,7 @@ export default function Home() {
       </div>
 
       {/* KARTU DI KIRI - PERSIS KAYAK FOTO */}
-      <div style={{ background: "white", margin: "18px 0 0 18px", borderRadius: "10px", padding: "28px 28px 30px 28px", maxWidth: "520px", width: "calc(100% - 36px)", boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+      <div style={{ background: "white", margin: "18px 0 0 18px", borderRadius: "10px", padding: "28px 28px 30px 28px", maxWidth: "420px", width: "calc(100% - 36px)", boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
         <h1 style={{ fontSize: "26px", fontWeight: "800", color: "#111827", lineHeight: "1.4", margin: 0 }}>
           Selamat Datang!<br />
           <span style={{ fontWeight: "300" }}>Ini adalah situs web pembelajaran</span><br />
