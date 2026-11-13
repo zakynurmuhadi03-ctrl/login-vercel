@@ -35,11 +35,11 @@ export default function DashboardPage() {
 
     <div className="layout">
       <div className="sidebar">
-        <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
+      <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
             <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
+          
   </div>
-        <div className="menu-list">
-          {menus.map((m) => (
+        <div className="menu-list">{menus.map((m) => (
             <button key={m.id} onClick={() => setActive(m.id)} className={active === m.id ? "menu-btn active" : "menu-btn"}>
               <span style={{ fontSize: "18px" }}>{m.icon}</span> <span className="menu-label">{m.label}</span>
             </button>
