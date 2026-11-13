@@ -18,18 +18,20 @@ export default function Login() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
-      {/* HEADER - TANPA LOGO UIA, CUMA ICON+ */}
+      {/* HEADER - LOGO UIA */}
       <div style={{
         background: "linear-gradient(90deg, #1d4ed8, #2563eb)",
-        margin: "15px", borderRadius: "18px", padding: "20px 30px",
+        margin: "15px", borderRadius: "18px", padding: "15px 30px",
         display: "flex", alignItems: "center", gap: "15px", color: "white"
       }}>
-        <div style={{ background: "white", borderRadius: "12px", padding: "8px 14px", fontWeight: "900", color: "#1e40af", fontSize: "22px" }}>
-          ICON<span style={{ color: "#f59e0b" }}>+</span>
-        </div>
-        <div>
-          <div style={{ fontWeight: "800", fontSize: "20px", lineHeight: "1", letterSpacing: "1px" }}>PT ICON PLUS INDONESIA</div>
-          <div style={{ fontSize: "12px", opacity: 0.9, letterSpacing: "2px" }}>PERPUSTAKAAN DIGITAL</div>
+        <img 
+          src="https://researchdunia.s3.amazonaws.com/uploads/university/a7a8660487fd1bfb33254badf88ceb2e.png"
+          alt="Logo UIA"
+          style={{ height: "60px", width: "auto", background: "white", borderRadius: "10px", padding: "4px" }}
+        />
+        <div style={{ borderLeft: "2px solid rgba(255,255,255,0.5)", paddingLeft: "15px" }}>
+          <div style={{ fontWeight: "800", fontSize: "22px", lineHeight: "1", letterSpacing: "1px" }}>UNIVERSITAS</div>
+          <div style={{ fontSize: "13px", letterSpacing: "1px", fontWeight: "600" }}>ISLAM AS-SYAFI'IYAH</div>
         </div>
       </div>
 
