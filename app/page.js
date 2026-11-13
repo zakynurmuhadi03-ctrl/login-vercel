@@ -18,7 +18,23 @@ export default function Login() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
-     <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
+      {/* HEADER - LOGO UIA */}
+      <div style={{
+        background: "linear-gradient(90deg, #1d4ed8, #2563eb)",
+        margin: "15px", borderRadius: "18px", padding: "15px 30px",
+        display: "flex", alignItems: "center", gap: "15px", color: "white"
+      }}>
+        <img 
+          src="https://researchdunia.s3.amazonaws.com/uploads/university/a7a8660487fd1bfb33254badf88ceb2e.png"
+          alt="Logo UIA"
+          style={{ height: "60px", width: "auto", background: "white", borderRadius: "10px", padding: "4px" }}
+        />
+        <div style={{ borderLeft: "2px solid rgba(255,255,255,0.5)", paddingLeft: "15px" }}>
+          <div style={{ fontWeight: "800", fontSize: "22px", lineHeight: "1", letterSpacing: "1px" }}>UNIVERSITAS</div>
+          <div style={{ fontSize: "13px", letterSpacing: "1px", fontWeight: "600" }}>ISLAM AS-SYAFI'IYAH</div>
+        </div>
+      </div>
+
       <div style={{ display: "flex", justifyContent: "center", marginTop: "60px", padding: "0 20px" }}>
         <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: "420px" }}>
           <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#1f2937", marginBottom: "25px" }}>
