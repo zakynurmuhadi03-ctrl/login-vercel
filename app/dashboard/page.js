@@ -13,7 +13,7 @@ export default function Dashboard() {
           
           {/* LOGO - GEDE, TINGGI 200px */}
 <div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px" }}>
-  <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100", objectFit: "cover", transform: "translateX(35px) scale(2.2)", display: "block" }} />
+  <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100", objectFit: "cover", transform: "translateX(100px) scale(2.2)", display: "block" }} />
 </div>
 
       
