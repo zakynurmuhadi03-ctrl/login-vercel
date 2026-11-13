@@ -12,7 +12,7 @@ export default function Dashboard() {
         <div style={{ width: "280px", flexShrink: 0, padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
           
           {/* LOGO - GEDE, TINGGI 200px */}
-<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", backgroundImage: "url(/header-uia.png)", backgroundSize: "cover", backgroundPossition: "center", backgroundRepeat: "no-repeat"}}>
+<div style={{ height: "175px", borderRadius: "18px", overflow: "hidden", backgroundImage: "url(/header-uia.png)", backgroundSize: "85% auto", backgroundPossition: "center", backgroundRepeat: "no-repeat"}}>
   </div>
 
       
