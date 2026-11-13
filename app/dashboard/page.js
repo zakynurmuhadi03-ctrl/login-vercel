@@ -12,9 +12,9 @@ export default function Dashboard() {
         <div style={{ width: "280px", flexShrink: 0, padding: "16px", display: "flex", flexDirection: "column", gap: "12px" }}>
           
           {/* LOGO - GEDE, TINGGI 200px */}
-          <div style={{ height: "200px", borderRadius: "18px", overflow: "hidden", background: "#2563eb" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "left center", display: "block", transform: "scale(1.15)" }} />
-          </div>
+         <div style={{ height: "165px", borderRadius: "16px", overflow: "hidden", background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "auto", display: "block" }} />
+</div>
 
           <button style={{ display: "flex", alignItems: "center", gap: "12px", background: "#dbeafe", color: "#2563eb", border: "none", padding: "14px 16px", borderRadius: "12px", textAlign: "left", cursor: "pointer", fontSize: "15px", fontWeight: "700" }}>
             ⌂ Home
