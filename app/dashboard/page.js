@@ -37,7 +37,7 @@ export default function DashboardPage() {
         <div className="sidebar">
           {/* 125% - UDAH PAS, JANGAN DIGEDEIN LAGI */}
           <div style={{ width: "100%", height: "140px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "150%", height: "100px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
+            <img src="/header-uia.png" alt="UIA" style={{ width: "150%", height: "75px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
           </div>
 
           <div className="menu-row">
