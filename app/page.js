@@ -1,50 +1,79 @@
-'use client'
-import { useState } from 'react'
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Home(){
-  const [user, setUser] = useState(null)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [msg, setMsg] = useState('')
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  async function login(e){
-    e.preventDefault()
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ username, password })
-    })
-    const data = await res.json()
-    if(res.ok){ setUser(data.user); setMsg('Login berhasil!') }
-    else setMsg(data.message)
-  }
-
-  async function logout(){
-    await fetch('/api/logout', { method: 'POST' })
-    setUser(null); setUsername(''); setPassword(''); setMsg('Berhasil logout')
-  }
-
-  if(user) return (
-      <div style={{maxWidth:400, margin:'80px auto', textAlign:'center', fontFamily:'sans-serif'}}>
-  <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
-      <h2>Selamat Datang, Sobat 👋</h2>
-      <p>Role: {user.role}</p>
-      <p>Kamu sudah login & terhubung ke Database Vercel</p>
-      <button onClick={logout} style={{padding:'10px 20px', background:'red', color:'white', border:0, borderRadius:8, cursor:'pointer'}}>Logout</button>
-    </div>
-  )
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Login sementara, nanti nyambung ke database
+    if (email === "admin@iconplus.id" && password === "admin123") {
+      router.push("/dashboard");
+    } else {
+      alert("Email atau kata sandi salah! Coba admin@iconplus.id / admin123");
+    }
+  };
 
   return (
-    <form onSubmit={login} style={{maxWidth:380, margin:'80px auto', padding:24, border:'1px solid #ddd', borderRadius:12, fontFamily:'sans-serif'}}>
-   <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
-      <h2 style={{textAlign:'center'}}>Login - Perpustakaan Digital</h2>
-      <label>Username</label><br/>
-      <input value={username} onChange={e=>setUsername(e.target.value)} placeholder="" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
-      <label>Password</label><br/>
-      <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="" required style={{width:'100%', padding:10, margin:'6px 0 12px'}} /><br/>
-      <button style={{width:'100%', padding:11, background:'#1e40af', color:'white', border:0, borderRadius:8, cursor:'pointer'}}>Login</button>
-      <p style={{textAlign:'center', color:'red'}}>{msg}</p>
-     
-    </form>
-  )
+    <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
+      {/* HEADER BIRU KAYAK UIA */}
+      <div style={{
+        background: "linear-gradient(90deg, #2563eb, #3b82f6)",
+        margin: "15px", borderRadius: "18px", padding: "20px 30px",
+        display: "flex", alignItems: "center", gap: "15px", color: "white"
+      }}>
+        <div style={{ background: "white", borderRadius: "12px", padding: "8px 14px", fontWeight: "900", color: "#1e40af", fontSize: "22px" }}>
+          ICON<span style={{ color: "#facc15" }}>+</span>
+        </div>
+        <div>
+          <div style={{ fontWeight: "800", fontSize: "20px", lineHeight: "1", letterSpacing: "1px" }}>PT ICON PLUS INDONESIA</div>
+          <div style={{ fontSize: "12px", opacity: 0.9, letterSpacing: "2px" }}>PERPUSTAKAAN DIGITAL</div>
+        </div>
+      </div>
+
+      {/* FORM LOGIN */}
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "60px", padding: "0 20px" }}>
+        <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: "420px" }}>
+          <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#1f2937", marginBottom: "25px" }}>
+            Silakan Masuk dengan akun Anda.
+          </h2>
+
+          <label style={{ fontSize: "12px", fontWeight: "700", color: "#374151", letterSpacing: "1px" }}>EMAIL</label>
+          <div style={{ display: "flex", alignItems: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: "10px", padding: "12px", margin: "8px 0 20px" }}>
+            <span style={{ marginRight: "10px" }}>📧</span>
+            <input
+              type="email" required placeholder="Ketikkan alamat email"
+              value={email} onChange={(e) => setEmail(e.target.value)}
+              style={{ border: "none", outline: "none", width: "100%", fontSize: "14px" }}
+            />
+          </div>
+
+          <label style={{ fontSize: "12px", fontWeight: "700", color: "#374151", letterSpacing: "1px" }}>KATA SANDI</label>
+          <div style={{ display: "flex", alignItems: "center", background: "white", border: "1px solid #e5e7eb", borderRadius: "10px", padding: "12px", margin: "8px 0 20px" }}>
+            <span style={{ marginRight: "10px" }}>🔑</span>
+            <input
+              type="password" required placeholder="Ketikkan Kata Sandi"
+              value={password} onChange={(e) => setPassword(e.target.value)}
+              style={{ border: "none", outline: "none", width: "100%", fontSize: "14px" }}
+            />
+          </div>
+
+          <button type="submit" style={{
+            width: "100%", background: "#2563eb", color: "white", border: "none",
+            padding: "14px", borderRadius: "10px", fontWeight: "700", fontSize: "15px",
+            display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer"
+          }}>
+            <span>Masuk</span><span>→</span>
+          </button>
+
+          <p style={{ textAlign: "center", fontSize: "12px", color: "#6b7280", marginTop: "15px" }}>
+            Demo: admin@iconplus.id / admin123
+          </p>
+        </form>
+      </div>
+    </div>
+  );
 }
