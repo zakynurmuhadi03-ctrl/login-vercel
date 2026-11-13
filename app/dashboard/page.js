@@ -35,9 +35,9 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* UDAH DIPASIN - 140% AJA, JANGAN 175% LAGI */}
+          {/* 125% - UDAH PAS, JANGAN DIGEDEIN LAGI */}
           <div style={{ width: "100%", height: "140px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "140%", height: "140px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
+            <img src="/header-uia.png" alt="UIA" style={{ width: "125%", height: "140px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
           </div>
 
           <div className="menu-row">
