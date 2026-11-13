@@ -15,58 +15,70 @@ export default function DashboardPage() {
   return (
     <>
       <style>{`
-        .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
-        .sidebar { width: 280px; flex-shrink: 0; background: #fff; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-        .menu-row { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+        .page { min-height: 100vh; background: #eaf2ff; font-family: sans-serif; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; }
+        .top-header { width: 100%; height: 210px; border-radius: 20px; overflow: hidden; flex-shrink: 0; }
+        .top-header img { width: 100%; height: 100%; object-fit: fill; display: block; }
+        .main { display: flex; gap: 16px; margin-top: 16px; flex: 1; align-items: flex-start; }
+        .sidebar { width: 280px; flex-shrink: 0; background: #fff; padding: 16px; border-radius: 18px; display: flex; flex-direction: column; gap: 10px; }
         .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px; border-radius: 14px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
         .menu-btn.active { background: #dbeafe; color: #1d4ed8; font-weight: 700; }
-        .content { flex: 1; padding: 24px; display: flex; flex-direction: column; min-width: 0; }
+        .content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .white-box { background: #fff; border-radius: 10px; padding: 28px 28px 30px 28px; margin: 18px 0 18px 12px; max-width: 620px; width: 100%; box-sizing: border-box; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .footer { margin-top: auto; text-align: center; padding: 20px 10px 10px; font-size: 13px; color: #555; line-height: 1.6; }
         @media (max-width: 768px) {
-          .layout { flex-direction: column; }
-          .sidebar { width: 100%; box-sizing: border-box; padding: 12px; }
-          .menu-row { flex-direction: row; gap: 8px; }
-          .menu-btn { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 10px 0; font-size: 11px; text-align: center; }
+          .page { padding: 12px; }
+          .top-header { height: 150px; }
+          .main { flex-direction: column; }
+          .sidebar { width: 100%; box-sizing: border-box; flex-direction: row; padding: 12px; }
+          /* DI HP - TULISAN DISEMBUNYIIN, TINGGAL ICON */
+          .menu-label { display: none; }
+          .menu-btn { flex: 1; justify-content: center; padding: 14px 0; font-size: 20px; }
           .menu-btn.active { background: #2f6bff; color: #fff; }
-          .content { padding: 12px; }
-          .logout-wrap { margin-top: 0; flex: 1; display: flex; }
-          .logout-wrap .menu-btn { flex: 1; }
+          .white-box { margin: 18px 4px; max-width: 100%; }
         }
       `}</style>
 
-      <div className="layout">
-        <div className="sidebar">
-          {/* BIRU GEDE + LOGO GEDE - 165% */}
-          <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
-          </div>
-
-          <div className="menu-row">
-            {menus.map((m) => (
-              <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
-                <span style={{ fontSize: "18px" }}>{m.icon}</span> {m.label}
-              </button>
-            ))}
-            <div className="logout-wrap">
-              <button onClick={() => router.push("/login")} className="menu-btn">
-                <span style={{ fontSize: "18px" }}>⏻</span> Keluar
-              </button>
-            </div>
-          </div>
+      <div className="page">
+        <div className="top-header">
+          <img src="/header-uia.png" alt="UIA" />
         </div>
 
-        <div className="content">
-          {/* KOTAK PUTIH TETEP KECIL */}
-          <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
-            {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
-            {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
-            {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
-            <p style={{ color: "#666", fontSize: "14px", marginBottom: 0 }}></p>
+        <div className="main">
+          <div className="sidebar">
+            {menus.map((m) => (
+              <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
+                <span style={{ fontSize: "20px" }}>{m.icon}</span>
+                <span className="menu-label">{m.label}</span>
+              </button>
+            ))}
+            <button onClick={() => router.push("/login")} className="menu-btn">
+              <span style={{ fontSize: "20px" }}>⏻</span>
+              <span className="menu-label">Keluar</span>
+            </button>
           </div>
 
-          {/* FOOTER NEMPEL DI BAWAH */}
-          <div style={{ marginTop: "auto", textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
-            Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
-            3420230010 | Teknik Informatika - TFI UIA
+          <div className="content">
+            <div className="white-box">
+              {active === "home" && (
+                <>
+                  <h2 style={{ margin: 0, fontSize: "32px", fontWeight: "800", lineHeight: "1.2" }}>Selamat Datang!</h2>
+                  <p style={{ fontSize: "22px", lineHeight: "1.5", color: "#111", margin: "10px 0 0", fontWeight: "600" }}>
+                    Ini adalah situs web pembelajaran<br />
+                    <span style={{ color: "#2f6bff" }}>Mata Kuliah Web teknologi</span>,<br />
+                    Dosen Pengampu<br />
+                    Adhitya Ahmad Pradypta, S.Kom., M.T.I.
+                  </p>
+                  <p style={{ color: "#666", fontSize: "14px", margin: "16px 0 0" }}>Selamat datang, Zaky Nurmuhadi</p>
+                </>
+              )}
+              {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
+              {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
+            </div>
+
+            <div className="footer">
+              Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
+              3420230010 | Teknik Informatika - TFI UIA
+            </div>
           </div>
         </div>
       </div>
