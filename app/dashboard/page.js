@@ -37,7 +37,7 @@ export default function DashboardPage() {
         <div className="sidebar">
           {/* BIRU GEDE + LOGO GEDE - 165% */}
           <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
-            <img src="/header-uia.png" alt="UIA" style={{ width: "200%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
+            <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
           </div>
 
           <div className="menu-row">
@@ -55,14 +55,16 @@ export default function DashboardPage() {
         </div>
 
         <div className="content">
-          {/* KOTAK PUTIH CUKUP SAMPE ISI NYA AJA, GAK SAMPE BAWAH LAGI */}
+          {/* KOTAK PUTIH TETEP KECIL */}
           <div style={{ background: "#fff", borderRadius: "18px", padding: "24px" }}>
             {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
             {active === "invoices" && <h2 style={{ margin: 0 }}>Invoices Page</h2>}
             {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
             <p style={{ color: "#666", fontSize: "14px", marginBottom: 0 }}></p>
           </div>
-          <div style={{ textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
+
+          {/* FOOTER NEMPEL DI BAWAH */}
+          <div style={{ marginTop: "auto", textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
             Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
             3420230010 | Teknik Informatika - TFI UIA
           </div>
