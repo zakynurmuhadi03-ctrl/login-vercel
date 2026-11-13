@@ -18,30 +18,7 @@ export default function Login() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#f2f6fb", fontFamily: "Arial, sans-serif" }}>
-      {/* HEADER PERSIS KAYAK FOTO UIA */}
-      <div style={{
-        background: "linear-gradient(90deg, #1d4ed8, #2563eb)",
-        margin: "15px", borderRadius: "18px", padding: "18px 30px",
-        display: "flex", alignItems: "center", gap: "0px", color: "white"
-      }}>
-        {/* LOGO UIA - TANPA KOTAK PUTIH */}
-        <div style={{ display: "flex", alignItems: "center", gap: "15px", paddingRight: "20px", borderRight: "2px solid rgba(255,255,255,0.6)" }}>
-          <div style={{ position: "relative", lineHeight: "1", textAlign: "center" }}>
-            <div style={{ fontSize: "10px", color: "#fff", marginBottom: "2px" }}>ﷺ</div>
-            <div style={{ fontSize: "52px", fontWeight: "900", letterSpacing: "-3px", color: "#0a3d2c", textShadow: "1px 1px 0 rgba(0,0,0,0.2)" }}>
-              UI<span style={{ color: "#16a34a" }}>▲</span>
-            </div>
-            <div style={{ fontSize: "9px", letterSpacing: "1px", color: "#0a3d2c", fontWeight: "700" }}>AS-SYAFI'IYAH</div>
-          </div>
-        </div>
-
-        {/* TEKS KANAN */}
-        <div style={{ paddingLeft: "20px" }}>
-          <div style={{ fontWeight: "900", fontSize: "32px", lineHeight: "1", letterSpacing: "1px", color: "#0f172a" }}>UNIVERSITAS</div>
-          <div style={{ fontSize: "16px", letterSpacing: "0.5px", fontWeight: "700", color: "#15803d", marginTop: "4px" }}>ISLAM AS-SYAFI'IYAH</div>
-        </div>
-      </div>
-
+     <img src="https://cdn.annibuku.com/uploads/logo-kampus/8710-universitas-islam-as-syafiiyah.jpg" alt="Logo UIA" style={{width:90, height:90, objectFit:'contain', display:'block', margin:'0 auto 10px'}} />
       <div style={{ display: "flex", justifyContent: "center", marginTop: "60px", padding: "0 20px" }}>
         <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: "420px" }}>
           <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#1f2937", marginBottom: "25px" }}>
