@@ -16,16 +16,16 @@ export default function DashboardPage() {
     <>
       <style>{`
         .layout { display: flex; min-height: 100vh; background: #eaf2ff; font-family: sans-serif; }
-        .sidebar { width: 250px; flex-shrink: 0; background: #fff; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
-        .menu-row { display: flex; flex-direction: column; gap: 8px; width: 100%; }
-        .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; border-radius: 12px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: transparent; color: #333; }
+        .sidebar { width: 280px; flex-shrink: 0; background: #fff; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+        .menu-row { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+        .menu-btn { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 14px; border-radius: 14px; border: none; cursor: pointer; text-align: left; font-size: 14px; background: #fff; color: #333; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
         .menu-btn.active { background: #dbeafe; color: #1d4ed8; font-weight: 700; }
         .content { flex: 1; padding: 24px; display: flex; flex-direction: column; min-width: 0; }
         @media (max-width: 768px) {
           .layout { flex-direction: column; }
           .sidebar { width: 100%; box-sizing: border-box; padding: 12px; }
           .menu-row { flex-direction: row; gap: 8px; }
-          .menu-btn { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 10px 0; font-size: 11px; text-align: center; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+          .menu-btn { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 10px 0; font-size: 11px; text-align: center; }
           .menu-btn.active { background: #2f6bff; color: #fff; }
           .content { padding: 12px; }
           .logout-wrap { margin-top: 0; flex: 1; display: flex; }
@@ -35,8 +35,10 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* LOGO - WARNA BIRU UDAH SAMA, GAK ADA 2 BIRU LAGI */}
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "75px", objectFit: "fill", display: "block", borderRadius: "14px", marginBottom: "12px" }} />
+          {/* LOGO KAYAK DI FOTO - GEDE KE BAWAH, LOGO DI BAWAH KIRI */}
+          <div style={{ width: "100%", height: "145px", background: "#1d4ed8", borderRadius: "20px", overflow: "hidden", display: "flex", alignItems: "flex-end", padding: "0 0 22px 14px", boxSizing: "border-box" }}>
+            <img src="/header-uia.png" alt="UIA" style={{ width: "185px", height: "auto", display: "block" }} />
+          </div>
 
           <div className="menu-row">
             {menus.map((m) => (
