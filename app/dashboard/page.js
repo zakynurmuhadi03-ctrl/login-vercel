@@ -34,10 +34,10 @@ export default function DashboardPage() {
       `}</style>
 
       <div className="layout">
+        {/* SIDEBAR KIRI / DI HP JADI MENU ATAS KESAMPING */}
         <div className="sidebar">
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "auto", borderRadius: "14px", marginBottom: "8px" }} />
-          
-          {/* SEMUA 4 TOMBOL DALAM 1 BARIS DI HP */}
+          <img src="/header-uia.png" alt="UIA" style={{ width: "170px", maxWidth: "70%", height: "auto", display: "block", margin: "4px auto 12px", borderRadius: "10px" }} />
+
           <div className="menu-row">
             {menus.map((m) => (
               <button key={m.id} onClick={() => setActive(m.id)} className={`menu-btn ${active === m.id ? "active" : ""}`}>
@@ -45,13 +45,14 @@ export default function DashboardPage() {
               </button>
             ))}
             <div className="logout-wrap">
-              <button onClick={() => { if (confirm("Yakin mau keluar?")) router.push("/login"); }} className="menu-btn">
+              <button onClick={() => router.push("/login")} className="menu-btn">
                 <span style={{ fontSize: "18px" }}>⏻</span> Keluar
               </button>
             </div>
           </div>
         </div>
 
+        {/* ISI KANAN */}
         <div className="content">
           <div style={{ background: "#fff", borderRadius: "18px", padding: "24px", flex: 1 }}>
             {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
