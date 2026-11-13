@@ -55,6 +55,10 @@ export default function Login() {
             <span>Masuk</span><span>→</span>
           </button>
         </form>
+           {/* FOOTER - KECIL DI BAWAH TENGAH */}
+      <div style={{ marginTop: "auto", textAlign: "center", padding: "30px 20px 18px", color: "#6b7280", fontSize: "12.5px", fontFamily: "Arial, sans-serif" }}>
+        Web ini dikerjakan oleh <b style={{ color: "#374151" }}>Zaky Nurmuhadi</b> | 3420230010 | Teknik Informatika - TFUIA
+        
       </div>
     </div>
   );
