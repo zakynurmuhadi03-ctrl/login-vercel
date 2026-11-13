@@ -1,15 +1,17 @@
-dash"use client";
+"use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
   const [active, setActive] = useState("home");
   const router = useRouter();
+
   const menus = [
     { id: "home", label: "Home", icon: "🏠" },
     { id: "invoices", label: "Invoices", icon: "🧾" },
     { id: "customers", label: "Customers", icon: "👥" },
   ];
+
   return (
     <>
     <style>{`
@@ -30,10 +32,12 @@ export default function DashboardPage() {
         .logout-wrap { flex: 1 !important; }
       }
     `}</style>
+
     <div className="layout">
       <div className="sidebar">
-        <div className="sidebar-header" style={{ width: "100%", height: "110px", borderRadius: "16px", overflow: "hidden", flexShrink: 0 }}>
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+       <div style={{ width: "100%", height: "200px", borderRadius: "20px", overflow: "hidden" }}>
+            <img src="/header-uia.png" alt="UIA" style={{ width: "225%", height: "200px", objectFit: "fill", objectPosition: "left center", display: "block" }} />
+
         </div>
         <div className="menu-list">
           {menus.map((m) => (
@@ -56,7 +60,8 @@ export default function DashboardPage() {
           {active === "customers" && <h2 style={{ margin: 0 }}>Customers Page</h2>}
         </div>
         <div style={{ marginTop: "auto", textAlign: "center", padding: "20px 10px 10px", fontSize: "13px", color: "#555", lineHeight: "1.6" }}>
-          Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />3420230010 | Teknik Informatika - TFI UIA
+          Web ini dikerjakan oleh <b>Zaky Nurmuhadi</b><br />
+          3420230010 | Teknik Informatika - TFI UIA
         </div>
       </div>
     </div>
