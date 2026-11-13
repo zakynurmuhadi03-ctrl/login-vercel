@@ -35,8 +35,10 @@ export default function DashboardPage() {
 
       <div className="layout">
         <div className="sidebar">
-          {/* LOGO GAK KEPOTONG LAGI - FULL UNIVERSITAS ISLAM AS-SYAFI'IYAH */}
-          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "150px", objectFit: "fill", display: "block", borderRadius: "20px" }} />
+          {/* LOGO DIGEDEIN - YANG KEPOTONG CUMA BIRU KOSONG KANAN, TULISAN AMAN */}
+          <div style={{ width: "100%", height: "150px", borderRadius: "20px", overflow: "hidden" }}>
+            <img src="/header-uia.png" alt="UIA" style={{ width: "175%", height: "150px", objectFit: "cover", objectPosition: "left center", display: "block" }} />
+          </div>
 
           <div className="menu-row">
             {menus.map((m) => (
