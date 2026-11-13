@@ -34,9 +34,9 @@ export default function DashboardPage() {
       `}</style>
 
       <div className="layout">
-        {/* SIDEBAR KIRI / DI HP JADI MENU ATAS KESAMPING */}
         <div className="sidebar">
-          <img src="/header-uia.png" alt="UIA" style={{ width: "170px", maxWidth: "70%", height: "auto", display: "block", margin: "4px auto 12px", borderRadius: "10px" }} />
+          {/* LOGO BESAR LAGI KAYAK DULU */}
+          <img src="/header-uia.png" alt="UIA" style={{ width: "100%", height: "auto", display: "block", borderRadius: "14px", marginBottom: "12px" }} />
 
           <div className="menu-row">
             {menus.map((m) => (
@@ -52,7 +52,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* ISI KANAN */}
         <div className="content">
           <div style={{ background: "#fff", borderRadius: "18px", padding: "24px", flex: 1 }}>
             {active === "home" && <h2 style={{ margin: 0 }}>Dashboard Page</h2>}
