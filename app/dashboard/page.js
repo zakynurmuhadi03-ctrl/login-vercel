@@ -16,7 +16,7 @@ export default function Dashboard() {
   <img src="/header-uia.png" alt="UIA" style={{ width: "88%", height: "auto", display: "block" }} />
 </div>
 
-</div>        
+      
 
           <button style={{ display: "flex", alignItems: "center", gap: "12px", background: "#dbeafe", color: "#2563eb", border: "none", padding: "14px 16px", borderRadius: "12px", textAlign: "left", cursor: "pointer", fontSize: "15px", fontWeight: "700" }}>
             ⌂ Home
