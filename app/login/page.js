@@ -12,7 +12,7 @@ export default function LoginPage() {
   e.preventDefault();
   if (loading) return;
 
-  if (email !== "zaky@gmail.com" || password !== "zaky123") {
+  if (email !== "zakynurmuhadi03@gmail.com" || password !== "zaky123") {
     alert("Email atau Kata Sandi salah!");
     return;
   }
