@@ -9,13 +9,19 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = (e) => {
-    e.preventDefault();
-    if (loading) return;
-    setLoading(true);
-    setTimeout(() => {
-      router.push("/dashboard");
-    }, 1200);
-  };
+  e.preventDefault();
+  if (loading) return;
+
+  if (email !== "zaky@gmail.com" || password !== "zaky123") {
+    alert("Email atau Kata Sandi salah!");
+    return;
+  }
+
+  setLoading(true);
+  setTimeout(() => {
+    router.push("/dashboard");
+  }, 1200);
+};
 
   return (
     <div style={{ minHeight: "100vh", background: "#eef4ff", fontFamily: "Georgia, serif", display: "flex", flexDirection: "column" }}>
